@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>مطعم الحبايب</title>
+        <meta name="description" content="تمتع بتجربه تعليميه او غيرها من خلال الكاميرا خصتك فقط">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Akronim&family=Alkalami&family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Architects+Daughter&family=Aref+Ruqaa+Ink:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=Badeen+Display&family=Baskervville:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bungee&family=Bytesized&family=Cairo+Play:wght@200..1000&family=Cairo:wght@200..1000&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Changa:wght@200..800&family=Coral+Pixels&family=Corinthia:wght@400;700&family=Creepster&family=Danfo&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Fascinate+Inline&family=Fruktur:ital@0;1&family=Fustat:wght@200..800&family=Gravitas+One&family=Handjet:wght,ELSH@100..900,2&family=Jersey+25+Charted&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kavivanar&family=LINE+Seed+JP&family=Lalezar&family=Lateef:wght@200;300;400;500;600;700;800&family=Libertinus+Keyboard&family=Libre+Barcode+39+Extended&family=Mada:wght@200..900&family=Marhey:wght@300..700&family=Mirza:wght@400;500;600;700&family=Moirai+One&family=Nabla&family=Noto+Serif+Khitan+Small+Script&family=Oi&family=Oswald:wght@200..700&family=Palette+Mosaic&family=Playwrite+CU+Guides&family=Playwrite+NZ+Basic+Guides&family=Playwrite+NZ+Basic:wght@100..400&family=Qahiri&family=Rakkas&family=Reem+Kufi+Fun:wght@400..700&family=Reem+Kufi+Ink&family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+80s+Fade&family=Rubik+Broken+Fax&family=Rubik+Moonrocks&family=Rubik+Wet+Paint&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ruge+Boogie&family=Ruwudu:wght@400;500;600;700&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Scheherazade+New:wght@400;500;600;700&family=Stalinist+One&family=Tajawal:wght@200;300;400;500;700;800;900&family=Trade+Winds&family=Train+One&family=Vibes&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" href="img/logo.png" type="image/png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    </head>
+    <body>
+
+<div id="popup-overlay">
+  <div class="popup-card">
+    <button class="popup-close" onclick="closePopup()"><i class="fa fa-times"></i></button>
+    <div class="popup-badge">%10</div>
+    <h2>عرض خاص لأول طلب!</h2>
+    <p>اطلب دلوقتي واستمتع بخصم 10% على أول طلب ليك<br>العرض محدود – اغتنم الفرصة دلوقتي</p>
+    <a href="https://wa.me/201558143429?text=عايز%20أستفيد%20بعرض%20الـ10%25%20على%20أول%20طلب" target="_blank" class="btn btn-whatsapp" style="width:100%">
+      <i class="fab fa-whatsapp"></i> اطلب دلوقتي
+    </a>
+    <p class="popup-note">* العرض ساري حتى نهاية اليوم فقط</p>
+  </div>
+</div>
+ 
+ 
+<div id="countdown-bar">
+  <div class="timer-inner">
+    <i class="fa fa-fire"></i>
+    <span>خصم اليوم ينتهي بعد:</span>
+    <span class="timer-digits" id="countdown-timer">00:00:00</span>
+    <span>– اطلب دلوقتي واستمتع بأفضل الأسعار</span>
+  </div>
+</div>
+ 
+ 
+<nav id="main-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <img src="img/logo.png" alt="لوجو المطعم" onerror="this.style.display='none'" />
+      <div class="nav-logo-text">مطعم <span>الحبايب</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#about">من نحن</a>
+      <a href="#why-us">لماذا نحن</a>
+      <a href="#gallery">معرض الصور</a>
+      <a href="#reviews">التقييمات</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+    </div>
+    <div class="nav-actions">
+      <button class="copy-phone-btn" onclick="copyPhone()">
+        <i class="fa fa-copy"></i> انسخ الرقم
+      </button>
+      <button class="theme-toggle" onclick="toggleTheme()" title="تغيير المظهر">
+        <i class="fa fa-moon" id="theme-icon"></i>
+      </button>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" onclick="toggleMenu()"><i class="fa fa-info-circle"></i> من نحن</a>
+    <a href="#why-us" onclick="toggleMenu()"><i class="fa fa-star"></i> لماذا نحن</a>
+    <a href="#gallery" onclick="toggleMenu()"><i class="fa fa-images"></i> معرض الصور</a>
+    <a href="#reviews" onclick="toggleMenu()"><i class="fa fa-comments"></i> التقييمات</a>
+    <a href="#faq" onclick="toggleMenu()"><i class="fa fa-question-circle"></i> الأسئلة الشائعة</a>
+  </div>
+</nav>
+ 
+ 
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          متاح الآن للتوصيل
+        </div>
+        <h1 class="hero-title">
+          أفضل <span class="highlight">أكل</span> بيوصلك<br />لحد بابك
+        </h1>
+        <p class="hero-sub">
+          اطلب أكل طازة وبنكهة مميزة – بنوصلك خلال 30 دقيقة بأسعار مناسبة وجودة لا تتنازل عنها
+        </p>
+        <div class="hero-btns">
+          <a href="https://wa.me/201558143429?text=عايز%20أطلب%20دلوقتي%20من%20فضلك!" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> اطلب واتساب
+          </a>
+          <a href="tel:+201558143429" class="btn btn-outline">
+            <i class="fa fa-phone"></i> اتصل الآن
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">+2000</div>
+            <div class="stat-label">طلب شهريًا</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">4.8</div>
+            <div class="stat-label">تقييم العملاء</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">30</div>
+            <div class="stat-label">دقيقة توصيل</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-img-wrap">
+          <img src="img/img1.png" alt="صورة رئيسية" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'" />
+          <div class="hero-img-overlay"></div>
+        </div>
+        <div class="hero-float-card hero-float-1">
+          <div class="float-icon green"><i class="fab fa-whatsapp"></i></div>
+          <div class="float-text">
+            <div class="label">آخر طلب</div>
+            <div class="value">منذ 5 دقائق</div>
+          </div>
+        </div>
+        <div class="hero-float-card hero-float-2">
+          <div class="float-icon orange"><i class="fa fa-truck"></i></div>
+          <div class="float-text">
+            <div class="label">متوسط التوصيل</div>
+            <div class="value">35 دقيقة</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-stack reveal">
+        <img class="about-img-main" src="img/img2.png" alt="صورة المطعم" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'" />
+        <img class="about-img-secondary" src="img/img3.png" alt="صورة إضافية" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'" />
+        <div class="about-accent-box">
+          <div class="num">5+</div>
+          <div class="lbl">سنوات خبرة</div>
+        </div>
+      </div>
+      <div class="about-text reveal reveal-delay-1">
+        <div class="section-label"><i class="fa fa-info-circle"></i> من نحن</div>
+        <h2 class="section-title">قصتنا مع <span>الجودة</span></h2>
+        <p>
+          احنا مش بس مطعم، إحنا تجربة أكل حقيقية. من أول يوم افتتحنا فيه، كان هدفنا واحد: إن كل عميل يلاقي اللي بطلبه بجودة عالية وفي أسرع وقت ممكن.
+        </p>
+        <p>
+          بنستخدم أفضل الخامات الطازة يوميًا، وعندنا فريق متميز بيشتغل بشغف عشان يوصلك أحسن وجبة ممكنة لحد بابك.
+        </p>
+        <div class="about-features">
+          <div class="about-feature"><i class="fa fa-check-circle"></i> خامات طازة يوميًا</div>
+          <div class="about-feature"><i class="fa fa-check-circle"></i> توصيل سريع لجميع المناطق</div>
+          <div class="about-feature"><i class="fa fa-check-circle"></i> معايير نظافة عالية</div>
+          <div class="about-feature"><i class="fa fa-check-circle"></i> الدفع عند الاستلام</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-block reveal">
+        <div class="big-num"><i class="fa fa-star"></i> <span data-target="4.8">0</span></div>
+        <div class="big-label">متوسط تقييم العملاء</div>
+      </div>
+      <div class="stat-block reveal reveal-delay-1">
+        <div class="big-num">+<span data-target="2000">0</span></div>
+        <div class="big-label">طلب ناجح شهريًا</div>
+      </div>
+      <div class="stat-block reveal reveal-delay-2">
+        <div class="big-num"><span data-target="35">0</span> دقيقة</div>
+        <div class="big-label">متوسط وقت التوصيل</div>
+      </div>
+      <div class="stat-block reveal reveal-delay-3">
+        <div class="big-num">+<span data-target="500">0</span></div>
+        <div class="big-label">عميل راضٍ</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<section id="why-us">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-label"><i class="fa fa-award"></i> لماذا نحن</div>
+      <h2 class="section-title">ليه <span>تختارنا؟</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="fa fa-bolt"></i></div>
+        <h3>توصيل فائق السرعة</h3>
+        <p>وصلاتنا بيوصل في أقل من 35 دقيقة – بنقدر الوقت بتاعك</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon"><i class="fa fa-leaf"></i></div>
+        <h3>خامات طازة 100%</h3>
+        <p>بنجيب المكونات طازة كل يوم – مفيش حاجة مجمدة أو قديمة</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon"><i class="fa fa-tag"></i></div>
+        <h3>أسعار مناسبة جدًا</h3>
+        <p>جودة عالية بأسعار في متناول الجميع – مفيش مزايدة على الفلوس</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon"><i class="fa fa-shield-alt"></i></div>
+        <h3>نظافة وجودة عالية</h3>
+        <p>المطبخ بيتعمل على أعلى معايير النظافة والسلامة الغذائية</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon"><i class="fa fa-hand-holding-usd"></i></div>
+        <h3>الدفع عند الاستلام</h3>
+        <p>مش محتاج تدفع قبل ما تشوف الأكل – ادفع بعد ما توصلك الطلبية</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon"><i class="fa fa-headset"></i></div>
+        <h3>خدمة عملاء على مدار الساعة</h3>
+        <p>تواصل معانا في أي وقت عبر واتساب أو اتصال مباشر</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<section id="gallery">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-label"><i class="fa fa-images"></i> معرض الصور</div>
+      <h2 class="section-title">شوف <span>أعمالنا</span></h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="img/img1.png" alt="صورة 1" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'" />
+        <div class="gallery-overlay"><i class="fa fa-expand"></i></div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-1" onclick="openLightbox(this)">
+        <img src="img/img2.png" alt="صورة 2" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'" />
+        <div class="gallery-overlay"><i class="fa fa-expand"></i></div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2" onclick="openLightbox(this)">
+        <img src="img/img3.png" alt="صورة 3" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'" />
+        <div class="gallery-overlay"><i class="fa fa-expand"></i></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this)">
+        <img src="img/img4.png" alt="صورة 4" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'" />
+        <div class="gallery-overlay"><i class="fa fa-expand"></i></div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-1" onclick="openLightbox(this)">
+        <img src="img/img5.png" alt="صورة 5" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'" />
+        <div class="gallery-overlay"><i class="fa fa-expand"></i></div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2" onclick="openLightbox(this)">
+        <img src="img/img6.png" alt="صورة 6" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80'" />
+        <div class="gallery-overlay"><i class="fa fa-expand"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<div id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close"><i class="fa fa-times"></i></button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="صورة مكبرة" />
+</div>
+ 
+ 
+<section id="reviews">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-label"><i class="fa fa-comments"></i> آراء العملاء</div>
+      <h2 class="section-title">ماذا يقول <span>عملاؤنا؟</span></h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+        </div>
+        <p class="review-text">الأكل ممتاز جداً والتوصيل جه في وقته تمام. الطعام طازة وبيّن عليه الاهتمام بالجودة. هطلب تاني بكرة بإذن الله!</p>
+        <div class="review-author">
+          <div class="review-avatar">أ</div>
+          <div>
+            <div class="review-name">أحمد محمد</div>
+            <div class="review-date">منذ أسبوع</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+        </div>
+        <p class="review-text">صراحة تجربة ممتازة من أول وهلة! السرعة دي مكنتش متوقعاها، والأسعار معقولة جداً بالنسبة للجودة دي.</p>
+        <div class="review-author">
+          <div class="review-avatar">م</div>
+          <div>
+            <div class="review-name">منى إبراهيم</div>
+            <div class="review-date">منذ أسبوعين</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
+        </div>
+        <p class="review-text">بطلب منهم كل أسبوع تقريباً، الأكل بيجي دايماً زي ما أنا بتوقع أو أحسن. خدمة العملاء كويسة وبيرد بسرعة.</p>
+        <div class="review-author">
+          <div class="review-avatar">ك</div>
+          <div>
+            <div class="review-name">كريم عادل</div>
+            <div class="review-date">منذ شهر</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+        </div>
+        <p class="review-text">من أحسن التجارب اللي جربتها! الطلبية وصلت ساخنة وفي حالة ممتازة. أنا سعيدة جداً بالخدمة دي.</p>
+        <div class="review-author">
+          <div class="review-avatar">س</div>
+          <div>
+            <div class="review-name">سارة خالد</div>
+            <div class="review-date">منذ 3 أيام</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+        </div>
+        <p class="review-text">بجد نظيف وطازة، وده أهم حاجة بالنسبالي. متشكرين جداً على الخدمة المتميزة دي.</p>
+        <div class="review-author">
+          <div class="review-avatar">ع</div>
+          <div>
+            <div class="review-name">عمر سامي</div>
+            <div class="review-date">منذ 5 أيام</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+        </div>
+        <p class="review-text">الدفع عند الاستلام ده ميزة كبيرة بالنسبالي! وأكلهم تقيل ولذيذ. هينضاف لقايمة الأماكن اللي بطلب منها بانتظام.</p>
+        <div class="review-author">
+          <div class="review-avatar">ن</div>
+          <div>
+            <div class="review-name">نورا عصام</div>
+            <div class="review-date">منذ أسبوع</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<section id="hours-areas">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-label"><i class="fa fa-clock"></i> مواعيد وتغطية</div>
+      <h2 class="section-title">مواعيد العمل <span>والمناطق</span></h2>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-card reveal">
+        <div class="card-title"><i class="fa fa-clock"></i> مواعيد العمل</div>
+        <div class="hours-row">
+          <span class="day">السبت – الخميس</span>
+          <span class="time"><i class="fa fa-circle" style="color:#25d366;font-size:0.5rem"></i> 12:00 ظهرًا – 2:00 صباحًا <span class="badge-open">مفتوح</span></span>
+        </div>
+        <div class="hours-row">
+          <span class="day">الجمعة</span>
+          <span class="time">2:00 مساءً – 2:00 صباحًا</span>
+        </div>
+        <div class="hours-row">
+          <span class="day">الإجازات الرسمية</span>
+          <span class="time">12:00 ظهرًا – 12:00 منتصف الليل</span>
+        </div>
+      </div>
+      <div class="areas-card reveal reveal-delay-1">
+        <div class="card-title"><i class="fa fa-map-marker-alt"></i> مناطق التوصيل</div>
+        <div class="areas-list">
+          <div class="area-tag"><i class="fa fa-location-dot"></i> المعادي</div>
+          <div class="area-tag"><i class="fa fa-location-dot"></i> حلوان</div>
+          <div class="area-tag"><i class="fa fa-location-dot"></i> دار السلام</div>
+          <div class="area-tag"><i class="fa fa-location-dot"></i> طره</div>
+          <div class="area-tag"><i class="fa fa-location-dot"></i> بشتيل</div>
+          <div class="area-tag"><i class="fa fa-location-dot"></i> المنيل</div>
+          <div class="area-tag"><i class="fa fa-location-dot"></i> وسط البلد</div>
+          <div class="area-tag"><i class="fa fa-location-dot"></i> +مناطق أخرى</div>
+        </div>
+      </div>
+    </div>
+    <div class="map-wrap reveal">
+        <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2153533.5143442745!2d-52.375826785865456!3d74.71898889631532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1775600341909!5m2!1sen!2seg"
+    loading="lazy"
+    allowfullscreen=""
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+      <div class="map-placeholder" id="map-container">
+        <i class="fa fa-map-location-dot"></i>
+        <p>خطأ في خرائط جوجل<br><small>حدث خطأ غير متوقع</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<section id="menu-section">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-label"><i class="fa fa-utensils"></i> المنيو</div>
+      <h2 class="section-title">شوف <span>المنيو</span></h2>
+    </div>
+    <div class="menu-inner reveal">
+      <div class="menu-preview">
+        <img src="img/menu.png" alt="المنيو" id="menu-preview-img" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80'" />
+      </div>
+      <div class="menu-btns">
+        <button class="btn btn-primary" onclick="downloadMenus()">
+          <i class="fa fa-download"></i> حمّل المنيو
+        </button>
+        <a href="https://wa.me/201558143429?text=عايز%20أشوف%20المنيو%20الكامل%20من%20فضلك" target="_blank" class="btn btn-whatsapp">
+          <i class="fab fa-whatsapp"></i> أرسل المنيو واتساب
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<section id="faq">
+  <div class="container">
+    <div style="text-align:center" class="reveal">
+      <div class="section-label"><i class="fa fa-question-circle"></i> الأسئلة الشائعة</div>
+      <h2 class="section-title">أسئلة <span>وأجوبة</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          تكلفة التوصيل كام؟
+          <div class="faq-arrow"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><p>التوصيل مجاني للمناطق القريبة، وبيتحسب حسب البعد للمناطق الأبعد. تواصل معانا على واتساب لمعرفة تكلفة التوصيل لمنطقتك.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          في دفع فيزا أو كارت؟
+          <div class="faq-arrow"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><p>حاليًا بنقبل الدفع كاش عند الاستلام فقط. قريبًا هنضيف دفع إلكتروني.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          بتوصلوا برا المنطقة؟
+          <div class="faq-arrow"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><p>ممكن نوصل لأي مكان، بس هيكون في رسوم إضافية. تواصل معانا وهنوضحلك التفاصيل.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          قد إيه بياخد الطلب وقت؟
+          <div class="faq-arrow"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><p>متوسط وقت التوصيل من 25 لـ 40 دقيقة حسب المنطقة والطلب. بنحرص على الالتزام بالوقت دايمًا.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ممكن أعدّل في طلبي؟
+          <div class="faq-arrow"><i class="fa fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><p>أيوه، تواصل معانا بأسرع ما تقدر بعد الطلب وهنحاول نعدل عليه قبل ما يتحضر.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<section id="order-cta">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <h2>جاهز تطلب دلوقتي؟</h2>
+      <p>اطلب في ثواني عبر واتساب أو اتصل بينا مباشرة – إحنا في انتظارك!</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/201558143429?text=عايز%20أطلب%20دلوقتي%20من%20فضلك!" target="_blank" class="btn btn-white">
+          <i class="fab fa-whatsapp"></i> اطلب واتساب
+        </a>
+        <a href="tel:+201558143429" class="btn btn-white-outline">
+          <i class="fa fa-phone"></i> اتصل بينا
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ 
+<footer id="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <img src="img/logo.png" alt="لوجو" onerror="this.style.display='none'" />
+          <div class="brand-name">مطعم <span>الحبايب</span></div>
+        </div>
+        <p class="footer-desc">بنقدملك أفضل تجربة أكل بجودة عالية وتوصيل سريع لحد بابك. اطلب دلوقتي وادفع عند الاستلام.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/201558143429" target="_blank" class="social-link" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/201558143429" target="_blank" class="social-link" title="إنستجرام"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/201558143429" target="_blank" class="social-link" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.tiktok.com" target="_blank" class="social-link" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#about"><i class="fa fa-angle-left"></i> من نحن</a></li>
+          <li><a href="#why-us"><i class="fa fa-angle-left"></i> لماذا نحن</a></li>
+          <li><a href="#gallery"><i class="fa fa-angle-left"></i> معرض الصور</a></li>
+          <li><a href="#reviews"><i class="fa fa-angle-left"></i> التقييمات</a></li>
+          <li><a href="#menu-section"><i class="fa fa-angle-left"></i> المنيو</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="tel:+201558143429"><i class="fa fa-phone"></i> 01558143429</a></li>
+          <li><a href="https://wa.me/201558143429" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a></li>
+          <li><a href="https://wa.me/201558143429" target="_blank"><i class="fab fa-facebook-f"></i> صفحتنا على فيسبوك</a></li>
+          <li><a href="https://wa.me/201558143429" target="_blank"><i class="fab fa-instagram"></i> إنستجرام</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>العنوان</h4>
+        <ul>
+          <li><a href="#"><i class="fa fa-map-marker-alt"></i> اسم الشارع، المنطقة</a></li>
+          <li><a href="#hours-areas"><i class="fa fa-clock"></i> يوميًا 12 ظهرًا – 2 صباحًا</a></li>
+          <li><a href="#"><i class="fa fa-envelope"></i> Gimal@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 اسم المطعم – جميع الحقوق محفوظة</p>
+      <div class="footer-credit">
+        برمج وصمم هذا الموقع بواسطة
+        <span class="credit-link" onclick="window.open('https://wa.me/201558143429','_blank')">Mahmoud</span>
+      </div>
+    </div>
+  </div>
+</footer>
+ 
+ 
+<button id="sticky-wa" onclick="window.open('https://wa.me/201558143429?text=عايز%20أطلب%20دلوقتي%20من%20فضلك!','_blank')" title="اطلب واتساب">
+  <div class="sticky-wa-btn"><i class="fab fa-whatsapp"></i></div>
+  <div class="sticky-wa-label">اطلب الآن</div>
+</button>
+ 
+<div class="toast" id="toast"><i class="fa fa-check-circle"></i> <span id="toast-msg">تم!</span></div>
+
+
+
+        <script src="main.js"></script>
+    </body>
+    </html>
+    
